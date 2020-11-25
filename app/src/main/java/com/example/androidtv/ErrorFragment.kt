@@ -26,6 +26,6 @@ class ErrorFragment : androidx.leanback.app.ErrorFragment() {
     }
 
     companion object {
-        private val TRANSLUCENT = true
+        private const val TRANSLUCENT = true
     }
 }

@@ -16,13 +16,7 @@ data class Movie(
 ) : Serializable {
 
     override fun toString(): String {
-        return "Movie{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", videoUrl='" + videoUrl + '\'' +
-                ", backgroundImageUrl='" + backgroundImageUrl + '\'' +
-                ", cardImageUrl='" + cardImageUrl + '\'' +
-                '}'
+        return "Movie{id=$id, title='$title', videoUrl='$videoUrl', backgroundImageUrl='$backgroundImageUrl', cardImageUrl='$cardImageUrl'}"
     }
 
     companion object {

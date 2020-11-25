@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Fragment
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -39,7 +40,7 @@ class BrowseErrorActivity : Activity() {
                 .add(R.id.main_browse_fragment, mSpinnerFragment)
                 .commit()
 
-        val handler = Handler()
+        val handler = Handler(Looper.getMainLooper())
         handler.postDelayed({
             fragmentManager
                     .beginTransaction()
@@ -62,8 +63,8 @@ class BrowseErrorActivity : Activity() {
     }
 
     companion object {
-        private val TIMER_DELAY = 3000L
-        private val SPINNER_WIDTH = 100
-        private val SPINNER_HEIGHT = 100
+        private const val TIMER_DELAY = 3000L
+        private const val SPINNER_WIDTH = 100
+        private const val SPINNER_HEIGHT = 100
     }
 }
