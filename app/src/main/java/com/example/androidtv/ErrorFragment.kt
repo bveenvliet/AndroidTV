@@ -1,8 +1,8 @@
 package com.example.androidtv
 
 import android.os.Bundle
-import androidx.core.content.ContextCompat
 import android.view.View
+import androidx.core.content.res.ResourcesCompat
 
 /**
  * This class demonstrates how to extend [androidx.leanback.app.ErrorFragment].
@@ -15,13 +15,13 @@ class ErrorFragment : androidx.leanback.app.ErrorFragment() {
     }
 
     internal fun setErrorContent() {
-        imageDrawable = ContextCompat.getDrawable(activity, R.drawable.lb_ic_sad_cloud)
+        imageDrawable = ResourcesCompat.getDrawable(resources, R.drawable.lb_ic_sad_cloud, null)
         message = resources.getString(R.string.error_fragment_message)
         setDefaultBackground(TRANSLUCENT)
 
         buttonText = resources.getString(R.string.dismiss_error)
         buttonClickListener = View.OnClickListener {
-            fragmentManager.beginTransaction().remove(this@ErrorFragment).commit()
+            fragmentManager?.beginTransaction()?.remove(this@ErrorFragment)?.commit()
         }
     }
 
